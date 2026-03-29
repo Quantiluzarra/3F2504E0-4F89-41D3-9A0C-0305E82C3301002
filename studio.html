@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MULTICOLOR SQUARE Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><a href="index.html" target="_blank" rel="noopener">MULTICOLOR SQUARE</a></div>
+      <nav class="site-nav">
+        <a href="index.html" target="_blank" rel="noopener" data-i18n="navHome">Home</a>
+        <a href="studio.html" target="_blank" rel="noopener" class="active" data-i18n="navStudio">Studio</a>
+        <a href="settings.html" target="_blank" rel="noopener" data-i18n="navLab">Color Lab</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="canvas-section">
+        <div class="canvas-panel">
+          <div class="canvas-frame">
+            <canvas id="pixelCanvas" width="640" height="640" aria-label="Pixel painting canvas"></canvas>
+            <div class="canvas-badge" data-i18n="liveBadge">Live color mode</div>
+          </div>
+          <p class="hint" data-i18n="hintCanvas">Tap or drag on the canvas. Use the controls to change brush, colors and animation.</p>
+        </div>
+
+        <aside class="controls-panel">
+          <h1 data-i18n="studioTitle">Studio canvas</h1>
+          <p data-i18n="studioText">Paint with pixel precision, animated hues and responsive grid settings. Every artwork can be downloaded as PNG or GIF.</p>
+
+          <div class="panel-card">
+            <p class="panel-title" data-i18n="paletteTitle">Palette & tools</p>
+            <div class="tool-group">
+              <button class="tool active" data-tool="brush" data-i18n="toolBrush">Brush</button>
+              <button class="tool" data-tool="eraser" data-i18n="toolEraser">Eraser</button>
+              <button class="tool" data-tool="fill" data-i18n="toolFill">Fill</button>
+              <button class="tool" data-tool="gradient" data-i18n="toolGradient">Gradient</button>
+              <button class="tool" data-tool="rainbow" data-i18n="toolRainbow">Rainbow</button>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <p class="panel-title" data-i18n="labelPalette">Choose color</p>
+            <div class="palette-grid">
+              <button class="swatch active" data-color="#ff3d7f" style="background:#ff3d7f"></button>
+              <button class="swatch" data-color="#ffb545" style="background:#ffb545"></button>
+              <button class="swatch" data-color="#59d6ff" style="background:#59d6ff"></button>
+              <button class="swatch" data-color="#7d5cff" style="background:#7d5cff"></button>
+              <button class="swatch" data-color="#24d786" style="background:#24d786"></button>
+              <button class="swatch" data-color="#ffffff" style="background:#ffffff; border:1px solid #ddd"></button>
+            </div>
+            <label class="color-pick-label" data-i18n="labelCustomColor">Custom color</label>
+            <input id="colorPicker" type="color" value="#ff3d7f" />
+          </div>
+
+          <div class="panel-card">
+            <p class="panel-title" data-i18n="advancedTitle">Animation & grid</p>
+            <div class="checkbox-row">
+              <label><input id="liveColorToggle" type="checkbox" /> <span data-i18n="labelLiveColor">Live color</span></label>
+            </div>
+            <div class="checkbox-row">
+              <label><input id="rainbowToggle" type="checkbox" /> <span data-i18n="labelRainbowMode">Rainbow ink</span></label>
+            </div>
+            <div class="color-row">
+              <label data-i18n="labelGradientStart">Gradient start</label>
+              <input id="gradientStart" type="color" value="#ff3d7f" />
+            </div>
+            <div class="color-row">
+              <label data-i18n="labelGradientEnd">Gradient end</label>
+              <input id="gradientEnd" type="color" value="#59d6ff" />
+            </div>
+            <div class="slider-row">
+              <label><span data-i18n="labelDisplayScale">Canvas scale</span> <strong id="scaleValue">100%</strong></label>
+              <input id="displayScale" type="range" min="50" max="160" value="100" />
+            </div>
+            <div class="size-row">
+              <label data-i18n="labelColumns">Columns</label>
+              <input id="canvasCols" type="number" min="8" max="64" value="32" />
+              <label data-i18n="labelRows">Rows</label>
+              <input id="canvasRows" type="number" min="8" max="64" value="32" />
+            </div>
+            <div class="size-row expand-row">
+              <label data-i18n="labelExpandLeft">Left</label>
+              <input id="expandLeft" type="number" min="0" max="32" value="0" />
+              <label data-i18n="labelExpandRight">Right</label>
+              <input id="expandRight" type="number" min="0" max="32" value="0" />
+              <label data-i18n="labelExpandTop">Top</label>
+              <input id="expandTop" type="number" min="0" max="32" value="0" />
+              <label data-i18n="labelExpandBottom">Bottom</label>
+              <input id="expandBottom" type="number" min="0" max="32" value="0" />
+            </div>
+            <button id="resizeCanvasButton" class="button button-secondary" data-i18n="btnResizeCanvas">Resize canvas</button>
+          </div>
+
+          <div class="panel-actions">
+            <button id="clearButton" class="button button-secondary" data-i18n="btnClear">Clear</button>
+            <button id="downloadButton" class="button button-primary" data-i18n="btnExportPNG">Export PNG</button>
+            <button id="downloadGifButton" class="button button-primary" data-i18n="btnExportGIF">Export GIF</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="lang-switcher">
+        <button class="lang-button" data-lang="en">🇬🇧</button>
+      </div>
+      <div class="footer-meta">
+        <span data-i18n="footerText">Developer channel</span>
+        <a href="https://t.me/+4wpbbD--ZTM3NTY6" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

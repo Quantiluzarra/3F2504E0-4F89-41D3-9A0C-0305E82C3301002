@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MULTICOLOR SQUARE Color Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><a href="index.html" target="_blank" rel="noopener">MULTICOLOR SQUARE</a></div>
+      <nav class="site-nav">
+        <a href="index.html" target="_blank" rel="noopener" data-i18n="navHome">Home</a>
+        <a href="studio.html" target="_blank" rel="noopener" data-i18n="navStudio">Studio</a>
+        <a href="settings.html" target="_blank" rel="noopener" class="active" data-i18n="navLab">Color Lab</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="labEyebrow">Color Lab</p>
+          <h1 data-i18n="labTitle">Live color settings for animated pixel art.</h1>
+          <p class="hero-text" data-i18n="labText">Customize your palette, build gradients and turn every painting into a moving artwork. This page shows how colors come alive in MULTICOLOR SQUARE.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="studio.html" target="_blank" rel="noopener" data-i18n="openStudio">Open studio</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-card">
+            <div class="visual-topbar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="visual-grid color-lab-grid">
+              <div class="gradient-sample"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <h2 data-i18n="labFeaturesTitle">What you can tune</h2>
+        <div class="feature-grid">
+          <article>
+            <h3 data-i18n="labFeature1Title">Gradient brushes</h3>
+            <p data-i18n="labFeature1Text">Draw with a gradient that blends from one custom color to another across the canvas.</p>
+          </article>
+          <article>
+            <h3 data-i18n="labFeature2Title">Rainbow ink</h3>
+            <p data-i18n="labFeature2Text">Enable animated rainbow strokes and watch each pixel pulse with color.</p>
+          </article>
+          <article>
+            <h3 data-i18n="labFeature3Title">Live light</h3>
+            <p data-i18n="labFeature3Text">Activate live color mode to animate every painted pixel with subtle shifting hues.</p>
+          </article>
+          <article>
+            <h3 data-i18n="labFeature4Title">GIF export</h3>
+            <p data-i18n="labFeature4Text">Save your work as an animated GIF so the glowing color motion stays alive outside the editor.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="lang-switcher">
+        <button class="lang-button" data-lang="en">🇬🇧</button>
+      </div>
+      <div class="footer-meta">
+        <span data-i18n="footerText">Developer channel</span>
+        <a href="https://t.me/+4wpbbD--ZTM3NTY6" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
